@@ -9,6 +9,9 @@ import com.hndi.designpatterns.factorymethod.products.*;
 import com.hndi.designpatterns.abstractfactory.factories.*;
 import com.hndi.designpatterns.abstractfactory.themes.*;
 
+import com.hndi.designpatterns.decorator.*;
+import com.hndi.designpatterns.decorator.decorators.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -58,6 +61,19 @@ public class Main {
         Button lightButton = lightTheme.createButton();
         lightDropdown.draw();
         lightButton.draw();
+
+
+        //Decorator Pattern Example
+        Text plainText = new PlainText("Plain Text!");
+        System.out.println( plainText.getContent());
+
+        Text boldText = new BoldTextDecorator(new PlainText("Bold Text Decorating Plain Text!"));
+        System.out.println( boldText.getContent());
+
+        Text italicBoldText = new ItalicTextDecorator(new BoldTextDecorator(new PlainText("Italic Text " +
+                "Decorating Bold Text " +
+                "Decorating Plain Text!")));
+        System.out.println( italicBoldText.getContent());
 
     }
 }
