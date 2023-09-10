@@ -27,6 +27,7 @@ This repository covers a wide range of design patterns, including but not limite
 
 - Behavioral Patterns
   - Observer
+  - Command
 
 ## Contributing
 

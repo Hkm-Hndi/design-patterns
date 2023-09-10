@@ -12,6 +12,9 @@ import com.hndi.designpatterns.abstractfactory.themes.*;
 import com.hndi.designpatterns.decorator.*;
 import com.hndi.designpatterns.decorator.decorators.*;
 
+import com.hndi.designpatterns.command.*;
+import com.hndi.designpatterns.command.commands.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -74,6 +77,16 @@ public class Main {
                 "Decorating Bold Text " +
                 "Decorating Plain Text!")));
         System.out.println( italicBoldText.getContent());
+
+
+        //Command Pattern Example
+        Light light = new Light();
+        LightOnCommand lightOn = new LightOnCommand(light);
+        LightOffCommand lightOff = new LightOffCommand(light);
+
+        RemoteControl remote = new RemoteControl(lightOn, lightOff);
+        remote.onClick(); // Execute the "Turn On" command
+        remote.offClick(); // Execute the "Turn Off" command
 
     }
 }
