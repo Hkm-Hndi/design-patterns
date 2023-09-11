@@ -24,6 +24,7 @@ This repository covers a wide range of design patterns, including but not limite
  
 - Structural Patterns
   - Decorator
+  - Adapter
 
 - Behavioral Patterns
   - Observer

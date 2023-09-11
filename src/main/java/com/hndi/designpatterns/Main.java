@@ -15,6 +15,8 @@ import com.hndi.designpatterns.decorator.decorators.*;
 import com.hndi.designpatterns.command.*;
 import com.hndi.designpatterns.command.commands.*;
 
+import com.hndi.designpatterns.adapter.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -87,6 +89,12 @@ public class Main {
         RemoteControl remote = new RemoteControl(lightOn, lightOff);
         remote.onClick(); // Execute the "Turn On" command
         remote.offClick(); // Execute the "Turn Off" command
+
+        //Adapter Pattern Example
+        Adaptee adaptee = new Adaptee();
+        Target adapter = new Adapter(adaptee);
+
+        adapter.request(5,2);
 
     }
 }
