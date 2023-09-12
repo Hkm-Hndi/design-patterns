@@ -17,6 +17,8 @@ import com.hndi.designpatterns.command.commands.*;
 
 import com.hndi.designpatterns.adapter.*;
 
+import com.hndi.designpatterns.facade.Facade;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -95,6 +97,10 @@ public class Main {
         Target adapter = new Adapter(adaptee);
 
         adapter.request(5,2);
+
+        //Facade Pattern Example
+        Facade facade = new Facade();
+        facade.performOperations();
 
     }
 }
