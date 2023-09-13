@@ -16,8 +16,8 @@ import com.hndi.designpatterns.command.*;
 import com.hndi.designpatterns.command.commands.*;
 
 import com.hndi.designpatterns.adapter.*;
-
 import com.hndi.designpatterns.facade.Facade;
+import com.hndi.designpatterns.proxy.LazyBookParserProxy;
 
 public class Main {
     public static void main(String[] args) {
@@ -101,6 +101,12 @@ public class Main {
         //Facade Pattern Example
         Facade facade = new Facade();
         facade.performOperations();
+
+        //Proxy Pattern Example
+        String s="book content for parsing in pages";
+        LazyBookParserProxy proxy = new LazyBookParserProxy(s);
+        int countOfBookChar=proxy.request();
+        System.out.println(countOfBookChar);
 
     }
 }

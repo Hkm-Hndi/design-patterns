@@ -26,6 +26,7 @@ This repository covers a wide range of design patterns, including but not limite
   - Decorator
   - Adapter
   - Facade
+  - Proxy
 
 - Behavioral Patterns
   - Observer
