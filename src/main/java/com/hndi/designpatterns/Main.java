@@ -19,6 +19,9 @@ import com.hndi.designpatterns.adapter.*;
 import com.hndi.designpatterns.facade.Facade;
 import com.hndi.designpatterns.proxy.LazyBookParserProxy;
 
+import com.hndi.designpatterns.bridge.imp.*;
+import com.hndi.designpatterns.bridge.abs.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -107,6 +110,14 @@ public class Main {
         LazyBookParserProxy proxy = new LazyBookParserProxy(s);
         int countOfBookChar=proxy.request();
         System.out.println(countOfBookChar);
+
+        //Bridge Pattern Example
+        DrawingAPI windowsAPI = new WindowsAPI();
+        DrawingAPI linuxAPI = new LinuxAPI();
+        Shape circleInWindows = new Circle(10, 10, 5, windowsAPI);
+        Shape squareInLinux = new Square(20, 20, 8, linuxAPI);
+        circleInWindows.draw();
+        squareInLinux.draw();
 
     }
 }
