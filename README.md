@@ -27,6 +27,7 @@ This repository covers a wide range of design patterns, including but not limite
   - Adapter
   - Facade
   - Proxy
+  - Bridge
 
 - Behavioral Patterns
   - Observer
